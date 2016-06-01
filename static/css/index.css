@@ -41,7 +41,10 @@ input[type="submit"] {
 input[type="submit"]:hover{
     cursor:pointer;
     border-bottom: 1px solid #2868c8;
+    -moz-box-shadow:1px 1px 1px #ccc;/*Firefox*/
+    -webkit-box-shadow:1px 1px 1px #ccc;/*-webkit-*/
     box-shadow: 1px 1px 1px #ccc;
+    behavior: url(../js/PIE.htc);  /*ie6-9*/
     background-color: #317ef3;
 }
 
@@ -57,7 +60,7 @@ input[type="text"] {
 form {
     margin-top: 22px;
     display: flex;
-    flex-direction: row;
+    /* flex-direction: row; */
 }
 
 /*搜索栏的外边框*/
