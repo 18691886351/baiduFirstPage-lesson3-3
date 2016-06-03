@@ -7,11 +7,13 @@ html {
     height: 100%;
 }
 
+
 /*
 1.发现紧挨在body的div的margin,会顶出body，所以使用了怪异盒模型解决这个问题。
 在chrome和firefox浏览器都发现这个问题。
 2.对紧贴住body的div，不采用margin。采用padding
 */
+
 body {
     font: 12px arial;
     min-height: 580px;
@@ -22,49 +24,29 @@ body {
     margin-top: 20px;*/
 }
 
-/*去掉li标签前面的点*/
-li {
-    list-style-type: none;
+
+/*logo，搜索栏*/
+
+.main {
+    margin: 0 auto;
+    width: 650px;
+    padding: 30px;
 }
 
-input[type="submit"] {
-    background: #3385ff;
-    color: #fff;
-    height: 36px;
-    width: 100px;
-    letter-spacing: 1px;
-    font-size: 15px;
-    border: 0;
-    border-bottom: 1px solid #2d78f4;
+.main .logo {
+    margin: 0 auto;
+    width: 270px;
 }
 
-input[type="submit"]:hover{
-    cursor:pointer;
-    border-bottom: 1px solid #2868c8;
-    -moz-box-shadow:1px 1px 1px #ccc;/*Firefox*/
-    -webkit-box-shadow:1px 1px 1px #ccc;/*-webkit-*/
-    box-shadow: 1px 1px 1px #ccc;
-    behavior: url(../js/PIE.htc);  /*ie6-9*/
-    background-color: #317ef3;
+.main .logo img {
+    width: 270px;
+    height: 129px;
 }
 
-input[type="text"] {
-    height: 22px;
-    width: 500px;
-    padding: 0;
-    margin: 6px 0 0 7px;
-    outline: 0;
-    border: 0;
-}
-
-form {
-    margin-top: 22px;
-    display: flex;
-    /* flex-direction: row; */
-}
 
 /*搜索栏的外边框*/
-.text_span {
+
+.main .text_span {
     border: 1px solid #b6b6b6;
     background: #fff;
     display: inline-block;
@@ -75,9 +57,14 @@ form {
     border-right-width: 0px;
     margin-right: 0px;
     letter-spacing: -0.5em;
+    margin-top: 22px;
+    float: left;
 }
 
-.text_span_focus {
+
+/*搜索栏的外边框 获取焦点*/
+
+.main .text_span_focus {
     border: 1px solid #4791ff;
     background: #fff;
     display: inline-block;
@@ -88,120 +75,156 @@ form {
     border-right-width: 0px;
     margin-right: 0px;
     letter-spacing: -0.5em;
+    margin-top: 22px;
+    float: left;
 }
 
-.text_span:hover {
+.main .text_span:hover {
     border-color: #999;
 }
 
-.logo img {
-    width: 270px;
-    height: 129px;
+.main #input_div #baidu_text {
+    height: 22px;
+    width: 500px;
+    padding: 0;
+    margin: 6px 0 0 7px;
+    outline: 0;
+    border: 0;
 }
 
-.camera {
+.main #input_div .camera {
     position: absolute;
     right: 11px;
     top: 30%;
     height: 16px;
     width: 18px;
     background: #fff url(../images/soutu_icons_sample_6a1e1619.png) no-repeat -229px 0;
-    cursor:pointer;
+    cursor: pointer;
 }
 
-.camera:hover {
+.main #input_div .camera:hover {
     background-position: -229px -21px;
 }
 
-.button_span {
-    margin: 0;
-    padding: 0;
+/* .main .button_span #baidu_bnt:hover {
+    cursor: pointer;
+    border-bottom: 1px solid #2868c8;
+    -moz-box-shadow: 1px 1px 1px #ccc;
+    Firefox
+    -webkit-box-shadow: 1px 1px 1px #ccc;
+    -webkit-
+    box-shadow: 1px 1px 1px #ccc;
+    behavior: url(../js/PIE.htc);
+    ie6-9
+    background-color: #317ef3;
+} */
+
+
+#baidu_bnt:hover {
+    cursor: pointer;
+    background: #3385ff;
+}
+
+.main .button_span {
+    margin-top: 22px;
+    float: left;
+}
+
+.main .button_span #baidu_bnt {
+    /* background: #3385ff; */
+    color: #fff;
+    height: 36px;
+    width: 100px;
+    letter-spacing: 1px;
+    font-size: 15px;
+    border: 0;
+    border-bottom: 1px solid #2d78f4;
+}
+
+
+.nav-shell{
+    width: 100%;
+    height: 44px;
 }
 
 .nav {
-    display: flex;
-    justify-content: flex-end;
-    margin-right: 20px;
     padding-top: 20px;
+    min-width: 530px;
+    float: right;
 }
 
-.nav_a {
+
+/*去掉li标签前面的点*/
+
+.nav li {
+    list-style-type: none;
+    float: left;
+}
+
+.nav .nav_a {
     margin-left: 25px;
     font-weight: bold;
     font-size: 13px;
     color: #666;
     line-height: 24px;
-}
-
-
-/*
-只选则.nav下的子元素
-*/
-
-.nav >ul >li {
-    float: left;
-}
-
-.nav ul li ul {
-    float: none;
-}
-
-.nav ul li ul li a {
-    margin: 0;
-    padding: 0;
-}
-
-.nav ul li ul li a:link {
     text-decoration: none;
 }
 
-.nav ul li ul li {
+.nav .nav_a:visited {
+    color: #666;
+}
+
+.nav .nav_a:hover {
+    color: blue;
+}
+
+.nav .setting {
+    display: block;
+    position: relative;
+}
+
+.nav #setting_menu .row {
+    height: 10px;
+    width: 80px;
+    text-align: center;
+}
+
+.nav #setting_menu .setting_menu_content {
+    width: 80px;
+    height: 100px;
+    text-align: center;
+}
+
+.nav #setting_menu .menu {
     padding-top: 5px;
     text-align: center;
     width: 80px;
     padding-bottom: 5px;
 }
 
-.setting {
-    display: block;
-    position: relative;
+.nav #setting_menu .menu:hover {
+    background-color: #3385ff;
 }
 
-.setting_menu_hide {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    top: 15px;
-    position: absolute;
+.nav #setting_menu .menu:hover a {
+    color: white;
+}
+
+.nav #setting_menu .menu a {
+    text-decoration: none;
+}
+
+.nav .setting_menu_hide {
     display: none;
 }
 
-.setting_menu_show {
-    display: flex;
-    display: -webkit-flex;
-    flex-direction: column;
-    
-    align-items: center;
+.nav .setting_menu_show {
     top: 15px;
     position: absolute;
 }
 
-.products_menu_show {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    /*justify-content: center;*/
-    position: absolute;
-    top:0;
-    right:0;
-    width: 100px;
-    background-color: #f9f9f9;
-    border-left: 1px solid #b6b6b6;
-    height:100vh;
-}
-
-.products_menu_hide {
-    display: none;
+#products_a {
+    text-decoration: none;
 }
 
 #products_a,
@@ -214,28 +237,53 @@ form {
     font-weight: bold;
     font-size: 13px;
     line-height: 23px;
-    padding-left:4px;
-    padding-right:4px;
-    display:block;
+    padding-left: 4px;
+    padding-right: 4px;
+    display: block;
 }
 
-#products_menu ul li {
+.nav #products_menu #menu_top {
+    padding-top: 20px;
+    text-align: center;
+    width: 80px;
+    padding-bottom: 5px;
     border-bottom: #f0f0f0 1px solid;
-    margin-top: 10px;
 }
 
-#products_menu_top {
-    padding-top: 10px;
+.nav #products_menu #menu_top a {
+    text-decoration: none;
 }
 
-#products_menu_top >a{
-    text-decoration:none;
+.nav #products_menu .menu {
+    padding-top: 20px;
+    border-bottom: #f0f0f0 1px solid;
+    text-align: center;
+    width: 80px;
+    padding-bottom: 5px;
 }
 
-.products_menu_a:hover,.products_menu_a:visited,.products_menu_a:link{
+.nav .products_menu_show {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 80px;
+    background-color: #f9f9f9;
+    border-left: 1px solid #b6b6b6;
+    height: 100vh;
+}
+
+.nav .products_menu_hide {
+    display: none;
+}
+
+.products_menu_a:hover,
+.products_menu_a:visited,
+.products_menu_a:link {
     color: #666;
-    text-decoration:underline;
+    text-decoration: underline;
 }
+
+
 /*
 “更多产品”下拉菜单的图片设置，发现父级元素设置了display:flex,align-items: center;
 但子元素不能居中的情况，这里仍旧使用来了margin:0 auto;的方式居中
@@ -287,52 +335,17 @@ form {
     /*left: -5px;*/
 }
 
-
-/*
-.nav ul li:hover .setting_menu {
-    display: block;
-}
-*/
-
-.setting_menu_content li:hover {
-    background-color: #3385ff;
-}
-
-.setting_menu_content li:hover a {
-    color: white;
-}
-
-.setting_menu_row {
-    height: 10px;
-}
-
-.setting_menu_row img {
-    width: 8px;
-    height: 8px;
-}
-
-.nav a:visited {
-    color: #666;
-}
-
-.nav_a:hover {
-    color: blue;
-}
-
-.main {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
 .foot {
-    position: absolute;
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    color: #999;
-    bottom: 43px;
     width: 100%;
+    position: absolute;
+    bottom: 43px;
+}
+
+.foot-warp {
+    margin: 0 auto;
+    color: #999;
+    width: 700px;
+    min-width: 700px;
 }
 
 .foot a:link {
@@ -344,12 +357,14 @@ form {
 }
 
 .qrcode-img {
+    float: left;
     width: 60px;
     height: 60px;
     background: url(../images/zbios_62c636fe.png) 0 0 no-repeat;
 }
 
 .qrcode-img2 {
+    float: left;
     width: 60px;
     height: 60px;
     margin-left: 20px;
@@ -357,6 +372,7 @@ form {
 }
 
 .qrcode-text {
+    float: left;
     line-height: 23px;
 }
 
@@ -365,14 +381,11 @@ form {
 }
 
 .right {
-    display: flex;
-    flex-direction: column;
     margin-left: 62px;
+    float: left;
 }
 
 .help {
-    display: flex;
-    flex-direction: row;
     margin-top: 10px;
     margin-bottom: 10px;
 }
@@ -385,7 +398,6 @@ form {
     overflow: hidden;
     background-position: -600px -96px;
     position: relative;
-    top: -3px;
 }
 
 .c-icon-jgwablo {
