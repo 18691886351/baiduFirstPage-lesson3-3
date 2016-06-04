@@ -1,3 +1,6 @@
+/*
+为了保证更好的兼容性去掉大部分css3特性
+*/
 * {
     padding: 0;
     margin: 0;
@@ -7,13 +10,11 @@ html {
     height: 100%;
 }
 
-
 /*
-1.发现紧挨在body的div的margin,会顶出body，所以使用了怪异盒模型解决这个问题。
-在chrome和firefox浏览器都发现这个问题。
-2.对紧贴住body的div，不采用margin。采用padding
+1.ie6不支持min-height,min-width属性
+2.behavior: url的路径计算是从html开始的。
+但是针对button,span的hover在ie6下还是不生效
 */
-
 body {
     font: 12px arial;
     min-height: 580px;
@@ -28,7 +29,6 @@ body {
 
 
 /*logo，搜索栏*/
-
 .main {
     margin: 0 auto;
     width: 650px;
@@ -47,7 +47,6 @@ body {
 
 
 /*搜索栏的外边框*/
-
 .main .text_span {
     border: 1px solid #b6b6b6;
     background: #fff;
@@ -65,7 +64,6 @@ body {
 
 
 /*搜索栏的外边框 获取焦点*/
-
 .main .text_span_focus {
     border: 1px solid #4791ff;
     background: #fff;
@@ -239,9 +237,9 @@ body {
 .nav .setting_menu_show {
     top: 15px;
     position: absolute;
-    *left:0px;
-    _top:20px;
-    _left:0px;
+    *left:0px;  /* ie7 */
+    _top:20px;  /* ie6 */
+    _left:0px;  /* ie6 */
 }
 
 #products_a {
@@ -306,12 +304,6 @@ body {
     color: #666;
     text-decoration: underline;
 }
-
-
-/*
-“更多产品”下拉菜单的图片设置，发现父级元素设置了display:flex,align-items: center;
-但子元素不能居中的情况，这里仍旧使用来了margin:0 auto;的方式居中
-*/
 
 #music_icon {
     width: 40px;
