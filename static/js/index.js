@@ -31,3 +31,27 @@ function changeInputParentBorderColor() {
         document.getElementById("input_div").className="text_span"
     }
 }
+
+
+/*
+实现了导航栏目中“百度一下”的鼠标moveover以及moveout事件
+*/
+function baiduBntOnmouseoverOrOut() {
+    if(document.getElementById("baidu_bnt").className == "baidu_bnt_onmouseout"){
+        document.getElementById("baidu_bnt").className="baidu_bnt_onmouseover"
+    }else{
+        document.getElementById("baidu_bnt").className="baidu_bnt_onmouseout"
+    }
+}
+
+
+/*
+实现了导航栏目中“搜索栏camera”的鼠标moveover以及moveout事件
+*/
+function cameramouseoverOrOut() {
+    if(document.getElementById("camera").className == "camera_onmouseout"){
+        document.getElementById("camera").className="camera_onmouseover"
+    }else{
+        document.getElementById("camera").className="camera_onmouseout"
+    }
+}

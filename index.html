@@ -6,7 +6,6 @@
     <title>百度一下，你就知道了</title>
     <link rel="stylesheet" href="./static/css/index.css">
     <link rel="shortcut icon" href="./static/images/favicon.ico">
-    <script type="text/javascript" src="./static/js/index.js"></script>
 </head>
 
 <body>
@@ -21,7 +20,8 @@
                 <li><a class="nav_a" href="http://v.baidu.com/">视频</a></li>
                 <li><a class="nav_a" href="http://tieba.baidu.com/">贴吧</a></li>
                 <li><a class="nav_a" href="https://passport.baidu.com/v2/?login&tpl=mn&u=http%3A%2F%2Fwww.baidu.com%2F">登录</a></li>
-                <li class="setting" onmouseover="settingMenuHideOrdisplay()" onmouseout="settingMenuHideOrdisplay()"><a class="nav_a" href="">设置</a>
+                <li class="setting" onmouseover="settingMenuHideOrdisplay()" onmouseout="settingMenuHideOrdisplay()">
+                    <a class="nav_a" href="#">设置</a>
                     <div id="setting_menu" class="setting_menu_hide">
                         <div class="row">
                             <img src="./static/images/triangular_16px_1168028_easyicon.net.ico" />
@@ -95,10 +95,10 @@
                 <input id="baidu_text" type="text" onfocus="changeInputParentBorderColor()" onblur="changeInputParentBorderColor()" name="wd" />
                 <input type="hidden" name="cl" value="3" />
                 <input type="hidden" name="ie" value="utf-8">
-                <span class="camera"></span>
+                <span id="camera" onmouseover="cameramouseoverOrOut()" onmouseout="cameramouseoverOrOut()" class="camera_onmouseout"></span>
             </div>
             <div class="button_span">
-                <input id="baidu_bnt" type="submit" value="百度一下" />
+                <input onmouseover="baiduBntOnmouseoverOrOut()" onmouseout="baiduBntOnmouseoverOrOut()" id="baidu_bnt" class="baidu_bnt_onmouseout" type="submit" value="百度一下" />
             </div>
         </form>
     </div>
@@ -132,13 +132,19 @@
                 --><span><a href="http://jianyi.baidu.com/">意见反馈</a></span>
                     <!--
                 --><span>京ICP证030173号</span>
-                    <!--
-                --><span class="icrlogo"></span>
+                    <span class="icrlogo"></span>
                 </div>
-                <div class="c-icon-jgwablo"></div>京公网安备11000002000001号</div>
+                <span class="c-icon-jgwablo"></span>
+                <!--
+                --><span>京公网安备11000002000001号</span>
+            </div>
         </div>
     </div>
-    </div>
 </body>
-
+<script type="text/javascript" src="./static/js/index.js"></script>
+<!-- 在IE6下处理png图片无法透明问题-->
+<!--[if IE 6]>
+        <script src="./static/js/DD_belatedPNG_0.0.8a-min.js"></script>
+        <script type="text/javascript">DD_belatedPNG.fix('form span');</script>    
+<![endif]-->
 </html>
